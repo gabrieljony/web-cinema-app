@@ -1,7 +1,9 @@
 <div>
   <img [src]="filme | imagemFilme" [alt]="filme.original_title">
 </div>
-
+<p>
+    {{ filme.title }}
+  </p>
 <div>
   <h3>Sinopse</h3>
   <hr>
@@ -15,14 +17,13 @@
     <h6>Data</h6><span>{{ filme.release_date | date:'dd/MM/yyyy' }}</span>
     <h6>Situação</h6><span>{{ filme.status }}</span>
     <h6>Idioma</h6><span>{{ filme.original_language }}</span>
-    <h6>Duração</h6><span>{{ filme.runtime | date:'mm'}}</span>
+    <h6>Duração</h6><span>{{ filme.runtime | horaMinutos }}</span>
     <h6>Orçamento</h6><span>{{ filme.budget | currency }}</span>
     <h6>Receita</h6><span>{{ filme.revenue | currency }}</span>
     <h6>Lucro</h6><span>{{ (filme.revenue - filme.budget) | currency }}</span>
     <h6>Voto</h6><span>{{ filme.vote_average / 10 | percent }}</span>
-    <!-- <div *ngFor="let genero of generos">
+    <!-- <div *ngFor="let genero of genres">
       <span>{{ filme.genero.name }}</span>
     </div> -->
-
   </div>
 </div>

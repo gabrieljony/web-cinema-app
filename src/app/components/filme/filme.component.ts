@@ -10,7 +10,7 @@ import { FilmeService } from 'src/app/services/filme.service';
 export class FilmeComponent {
 
   filme: any = {};
-  generos: any[] = [];
+  genres: any[] = [];
 
   constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
 

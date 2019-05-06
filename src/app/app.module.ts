@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { FilmeComponent } from './components/filme/filme.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ListarFilmesComponent } from './components/listar-filmes/listar-filmes.component';
+import { HoraMinutosPipe } from './pipes/hora-minutos.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ListarFilmesComponent } from './components/listar-filmes/listar-filmes.
     ImagemFilmePipe,
     HomeComponent,
     FilmeComponent,
-    ListarFilmesComponent
+    ListarFilmesComponent,
+    HoraMinutosPipe
   ],
   imports: [
     BrowserModule,
