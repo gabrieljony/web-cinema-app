@@ -1,0 +1,9 @@
+<div (click)="clickFilme(item)" *ngFor="let item of items">
+    <img [src]="item | imagemFilme" />
+    <div>
+      <h5>{{ item.title }}</h5>
+      <h5>{{ item.release_date | date: 'dd/MM/yyyy' }}</h5>
+      <h5>{{ item.vote_average / 10 | percent }}</h5>
+      <h5>{{ item.overview }}</h5>
+    </div>
+</div>

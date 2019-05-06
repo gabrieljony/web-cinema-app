@@ -14,7 +14,7 @@ export class FilmeService {
   constructor(private http: HttpClient) { }
 
   getBuscar(query: string) {
-    const url = `${this.urlAPI}${query}&api_key=${
+    const url = `https://api.themoviedb.org/3${query}&api_key=${
       this.apikey
       }&language=pt-br&callback=JSONP_CALLBACK`;
 
@@ -22,7 +22,7 @@ export class FilmeService {
   }
 
   getBuscarPorFilme(query: string) {
-    const url = `${this.urlAPI}${query}?api_key=${
+    const url = `https://api.themoviedb.org/3${query}?api_key=${
       this.apikey
       }&language=pt-br&callback=JSONP_CALLBACK`;
 
@@ -30,13 +30,13 @@ export class FilmeService {
   }
 
   getDiscoverMovie() {
-    return this.getFilme('/discover/movie?sort_by=popularity.desc').pipe(
+    return this.getBuscar('/discover/movie?sort_by=popularity.desc').pipe(
        map((data: any) => data.results)
     );
   }
 
   getSearchMovie(termino: string) {
-    return this.getFilme(
+    return this.getBuscar(
       `/search/movie?query=${termino}&sort_by=popularity.desc`
     ).pipe(map((data: any) => data.results));
   }
