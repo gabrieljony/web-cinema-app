@@ -14,9 +14,11 @@ export class ListarFilmesComponent {
 
   clickFilme(item: any) {
 
-    let idFilme = item.id;
+    let idFilme;
 
-    this.router.navigate(["/filme", idFilme]);
+    idFilme = item.id;
+
+    this.router.navigate(['/filme', idFilme]);
   }
 
 }
