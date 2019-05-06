@@ -2,8 +2,8 @@
   <img [src]="filme | imagemFilme" [alt]="filme.original_title">
 </div>
 <p>
-    {{ filme.title }}
-  </p>
+  {{ filme.title }}
+</p>
 <div>
   <h3>Sinopse</h3>
   <hr>
@@ -22,8 +22,9 @@
     <h6>Receita</h6><span>{{ filme.revenue | currency }}</span>
     <h6>Lucro</h6><span>{{ (filme.revenue - filme.budget) | currency }}</span>
     <h6>Voto</h6><span>{{ filme.vote_average / 10 | percent }}</span>
-    <!-- <div *ngFor="let genero of genres">
-      <span>{{ filme.genero.name }}</span>
-    </div> -->
+    <h3>Genero</h3>
+    <div *ngFor="let genero of genres">
+      <span>{{ genero.name }}</span>
+    </div>
   </div>
 </div>

@@ -15,12 +15,19 @@ export class FilmeComponent {
   constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
 
     this.router.params.subscribe(params => {
-      console.log(params);
+      // console.log("parametro");
+      // console.log(params);
 
       this.filmeService.getFilme(params['id'])
         .subscribe(filme => {
+          // console.log("filme");
           console.log(filme);
           this.filme = filme;
+          // console.log("this.filme");
+          // console.log(this.filme);
+          this.genres = filme.genres;
+          // console.log("genero");
+          // console.log(this.genres);
         })
     })
   }
