@@ -1,0 +1,19 @@
+.circle-maior{
+  background-color: #116193;
+  border: 3px solid #116193;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.circle-menor{
+  background-color: #116193;
+  border: 5px solid #00e8e4;
+  display: block;
+  width: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+}
+
