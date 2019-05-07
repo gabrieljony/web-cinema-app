@@ -18,7 +18,7 @@ export class FilmeComponent {
       // console.log("parametro");
       // console.log(params);
 
-      this.filmeService.getFilme(params['id'])
+      this.filmeService.getMovie(params['id'])
         .subscribe(filme => {
           // console.log("filme");
           console.log(filme);

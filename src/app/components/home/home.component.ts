@@ -10,29 +10,32 @@ export class HomeComponent {
 
   filmes: any[] = [];
   novosFilmes: any[] = [];
-  // loading: boolean;
+  loading: boolean;
 
   constructor(private filmeService: FilmeService) {
-    // this.loading = true;
+    this.loading = true;
 
     this.filmeService.getDiscoverMovie()
       .subscribe((data: any) => {
 
         console.log(data);
         this.novosFilmes = data;
-        // this.loading = false;
+        this.loading = false;
       });
   }
 
-  buscar(termino: string) {
-    console.log(termino);
+  buscar(input: string) {
+    console.log("Campo");
+    console.log(input);
 
-    // this.loading = true;
-    this.filmeService.getBuscarPorFilme(termino).subscribe((data: any) => {
+    this.loading = true;
+    this.filmeService.getSearchMovie(input).subscribe((data: any) => {
+      console.log("Data");
       console.log(data);
 
+      console.log("Filmes");
       this.novosFilmes = data;
-      // this.loading = false;
+      this.loading = false;
     });
   }
 
