@@ -1,10 +1,21 @@
-.box-genero {
-    width:10%;
-    height:5%;
-    background-color:#ffffff;
-    border-radius: 15px;
-    border-style: solid;
-    border-color: #116193;
-    padding: 0.5%;
+.btn{
+    display: table;
     text-align: center;
+    text-decoration: none;
+    letter-spacing: .02;
+    font-weight: 600;
+    background-color: #ffffff;
+    border-radius: 2em;
+    border: .15em solid #116193;
+    margin-bottom: 1em;
+    transition: .2s all ease-in-out;  
+    }
+
+.btn-small{
+    font-size: .8em;
+    padding: 1em 1.8em;
+}
+
+@media only screen and (max-width:320px){
+    body{font-size: 12px;}
 }
