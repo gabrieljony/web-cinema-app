@@ -4,10 +4,13 @@
       <img class="img-movie" [src]="filme | imagemFilme">
     </div>
     <div>
-      <span class="percent">{{ filme.vote_average / 10 | percent }}</span>
+      
+    </div>
+    <div class="box">
+      <app-circle-voto class="voto" [voto]="filme.vote_average / 10 | percent"></app-circle-voto>
       <h2 class="title azul">{{ filme.title }}</h2>
       <span class="data-movie">{{ filme.release_date | date: 'dd/MM/yyyy' }}</span>
-      <p>{{ filme.overview }}</p>
+      <p class="description">{{ filme.overview }}</p>
       <!-- <app-btn-genero [itens]="novaLista"></app-btn-genero> -->
     </div>
   </article>

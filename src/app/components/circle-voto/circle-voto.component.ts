@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-circle-voto',
   templateUrl: './circle-voto.component.html',
   styleUrls: ['./circle-voto.component.css']
 })
-export class CircleVotoComponent implements OnInit {
+export class CircleVotoComponent {
 
-  voto: string = '75%';
+  @Input() voto: string;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }
