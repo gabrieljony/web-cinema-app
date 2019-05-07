@@ -16,15 +16,23 @@ export class FilmeService {
   getQuery(query: string) {
     const url = `https://api.themoviedb.org/3${query}&api_key=${
       this.apikey
-      }&language=pt-br&callback=JSONP_CALLBACK`;
+      }&language=pt-BR&callback=JSONP_CALLBACK`;
 
     return this.http.jsonp(url, '');
   }
 
-  getQueryforMovie(query: string) {
+  getQueryforMovies(query: string) {
     const url = `https://api.themoviedb.org/3${query}?api_key=${
       this.apikey
-      }&language=pt-br&callback=JSONP_CALLBACK`;
+      }&language=pt-BR&callback=JSONP_CALLBACK`;
+
+    return this.http.jsonp(url, '');
+  }
+
+  getQueryforPage(query: string) {
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${
+      this.apikey
+      }&language=pt-BR&callback=JSONP_CALLBACK&${query}`;
 
     return this.http.jsonp(url, '');
   }
@@ -42,7 +50,13 @@ export class FilmeService {
   }
 
   getMovie(id: string) {
-    return this.getQueryforMovie(`/movie/${id}`).pipe(
+    return this.getQueryforMovies(`/movie/${id}`).pipe(
+      map((data: any) => data)
+    );
+  }
+
+  getPage(id: string) {
+    return this.getQueryforPage(`page=${id}`).pipe(
       map((data: any) => data)
     );
   }

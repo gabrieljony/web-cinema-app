@@ -16,10 +16,30 @@ export class HomeComponent {
 
     this.filmeService.getDiscoverMovie()
       .subscribe((data: any) => {
-
+        // console.log("data Lista de Filmes - aquivo home");
+        // console.log(data);
         this.novosFilmes = data;
         this.loading = false;
       });
+
+  }
+
+  pagina(input: string) {
+    console.log("Campo digitado");
+    console.log(input);
+
+    this.loading = true;
+    this.filmeService.getQueryforPage(input).subscribe((data: any) => {
+      console.log("data Lista de Filmes - dos novos filmes home");
+      console.log(data);
+      this.novosFilmes = data;
+      this.loading = false;
+    });
+
+    this.filmeService.getPage(input).subscribe((data: any) => {
+      console.log("data Lista de Filmes - na determinada pagina home");
+      console.log(data);
+    });
   }
 
 }

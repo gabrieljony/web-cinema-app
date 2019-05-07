@@ -1,5 +1,5 @@
-import { FilmeService } from './services/filme.service';
 import { Component } from '@angular/core';
+import { FilmeService } from './services/filme.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor(public filmeService: FilmeService) {
-    this.filmeService.getDiscoverMovie().subscribe(data => console.log(data));
-  }
+
 }

@@ -8,16 +8,13 @@ import { Router } from '@angular/router';
 })
 export class ListarFilmesComponent {
 
-  @Input() items: any[] = [];
+  @Input() listaFilme: any[] = [];
 
   constructor(private router: Router) { }
 
   clickFilme(item: any) {
-
     let idFilme;
-
     idFilme = item.id;
-
     this.router.navigate(['/filme', idFilme]);
   }
 
