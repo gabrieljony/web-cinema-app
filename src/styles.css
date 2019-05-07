@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Abel', 'Lato', sans-serif;
+}
+
+.azul {
+	color: #00e8e4;
+}
+
+.azul-marinho {
+	color: #116193;
+}

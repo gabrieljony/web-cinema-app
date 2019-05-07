@@ -1,0 +1,10 @@
+.box-genero {
+    width:10%;
+    height:5%;
+    background-color:#ffffff;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: #116193;
+    padding: 0.5%;
+    text-align: center;
+}

@@ -1,9 +1,14 @@
-<div (click)="clickFilme(item)" *ngFor="let item of items">
-    <img [src]="item | imagemFilme" />
-    <div>
-      <h5>{{ item.title }}</h5>
-      <h5>{{ item.release_date | date: 'dd/MM/yyyy' }}</h5>
-      <h5>{{ item.vote_average / 10 | percent }}</h5>
-      <h5>{{ item.overview }}</h5>
+<div id="area-principal" (click)="clickFilme(item)" *ngFor="let item of items">
+  <div id="movie">
+    <div class="img">
+      <img class="img-movie" [src]="item | imagemFilme">
     </div>
+    <div>
+      <span class="percent">{{ item.vote_average / 10 | percent }}</span>
+      <h2 class="title azul">{{ item.title }}</h2>
+      <span class="data-movie">{{ item.release_date | date: 'dd/MM/yyyy' }}</span>
+      <p>{{ item.overview }}</p>
+      <app-btn-genero></app-btn-genero>
+    </div>
+  </div>
 </div>

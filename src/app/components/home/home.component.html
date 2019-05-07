@@ -1,4 +1,2 @@
-<p>Buscar Filme</p>
-<input #input type="text" (keyup)="buscar(input.value)" placeholder="Busque um filme por nome, ano ou gênero..." />
 
 <app-listar-filmes *ngIf="!loading" [items]="novosFilmes"></app-listar-filmes>

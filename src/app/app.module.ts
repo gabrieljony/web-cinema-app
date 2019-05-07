@@ -9,6 +9,9 @@ import { FilmeComponent } from './components/filme/filme.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ListarFilmesComponent } from './components/listar-filmes/listar-filmes.component';
 import { HoraMinutosPipe } from './pipes/hora-minutos.pipe';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
+import { BtnGeneroComponent } from './components/btn-genero/btn-genero.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { HoraMinutosPipe } from './pipes/hora-minutos.pipe';
     HomeComponent,
     FilmeComponent,
     ListarFilmesComponent,
-    HoraMinutosPipe
+    HoraMinutosPipe,
+    HeaderComponent,
+    SearchComponent,
+    BtnGeneroComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +32,6 @@ import { HoraMinutosPipe } from './pipes/hora-minutos.pipe';
     HttpClientJsonpModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, HeaderComponent]
 })
 export class AppModule { }

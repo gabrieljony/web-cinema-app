@@ -1,0 +1,9 @@
+.box-search {
+    width:100%;
+    background-color:#ebebeb;
+    border: none;
+    border-radius: 15px;
+    padding: 0.5%;
+    padding-left: 2%;
+    color: black;
+}
