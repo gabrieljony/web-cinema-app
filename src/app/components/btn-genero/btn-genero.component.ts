@@ -11,17 +11,23 @@ export class BtnGeneroComponent {
 
   @Input() itens: any[] = [];
 
+  @Input() id;
+
   genres: any[] = [];
 
-  constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
+  constructor(private router: ActivatedRoute, private filmeService: FilmeService) { 
+    
+    console.log(this.id);
+      console.log(this.itens);
+      this.metodo();
+  }
 
-    this.router.params.subscribe(params => {
-
-      this.filmeService.getMovie(params['id'])
+  metodo(){
+    this.filmeService.getMovie('450465')
         .subscribe(filme => {
           this.genres = filme.genres;
         })
-    })
+
   }
 
 }

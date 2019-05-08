@@ -26,7 +26,7 @@
         </table>
         <ul>
           <li class="genero">
-            <app-btn-genero></app-btn-genero>
+            <app-btn-genero [id]="filme.id"></app-btn-genero>
           </li>
         </ul>
         <app-circle-voto [voto]="filme.vote_average / 10 | percent"></app-circle-voto>

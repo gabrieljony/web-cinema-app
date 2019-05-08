@@ -16,8 +16,8 @@ export class HomeComponent {
 
     this.filmeService.getDiscoverMovie()
       .subscribe((data: any) => {
-        // console.log("data Lista de Filmes - aquivo home");
-        // console.log(data);
+        console.log("data Lista de Filmes - aquivo home");
+        console.log(data);
         this.novosFilmes = data;
         this.loading = false;
       });
