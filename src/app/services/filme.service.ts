@@ -75,7 +75,7 @@ export class FilmeService {
 
   getPage(id: string) {
     return this.getQueryNova(`page=${id}`)
-    .pipe(map((data: any) => data));
+    .pipe(map((data: any) => data.results));
   }
 
 }
