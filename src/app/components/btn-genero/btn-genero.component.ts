@@ -19,7 +19,17 @@ export class BtnGeneroComponent {
 
     // console.log(this.id);
     //   console.log(this.itens);
-      this.metodo();
+
+      this.router.params.subscribe(params => {
+        console.log(params);
+
+        this.filmeService.getMovie(params['id'])
+          .subscribe(filme => {
+            console.log(filme);
+            this.genres = filme.genres;
+
+          });
+      });
   }
 
   metodo(){
