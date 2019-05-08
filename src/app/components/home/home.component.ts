@@ -41,6 +41,7 @@ export class HomeComponent {
     this.filmeService.getPage(event.novoValor).subscribe((data: any) => {
       console.log("data Lista de Filmes - na determinada pagina home");
       console.log(data);
+      console.log(data.length);
       this.novosFilmes = data;
       this.loading = false;
     });

@@ -15,10 +15,10 @@ export class BtnGeneroComponent {
 
   genres: any[] = [];
 
-  constructor(private router: ActivatedRoute, private filmeService: FilmeService) { 
-    
-    console.log(this.id);
-      console.log(this.itens);
+  constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
+
+    // console.log(this.id);
+    //   console.log(this.itens);
       this.metodo();
   }
 
