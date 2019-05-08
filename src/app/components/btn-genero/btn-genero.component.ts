@@ -15,22 +15,7 @@ export class BtnGeneroComponent {
 
   genres: any[] = [];
 
-  constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
-
-    // console.log(this.id);
-    //   console.log(this.itens);
-
-      this.router.params.subscribe(params => {
-        console.log(params);
-
-        this.filmeService.getMovie(params['id'])
-          .subscribe(filme => {
-            console.log(filme);
-            this.genres = filme.genres;
-
-          });
-      });
-  }
+  constructor(private filmeService: FilmeService) { }
 
   metodo(){
     this.filmeService.getMovie('450465')

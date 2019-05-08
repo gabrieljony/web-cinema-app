@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FilmeService } from 'src/app/services/filme.service';
 
@@ -10,17 +10,22 @@ import { FilmeService } from 'src/app/services/filme.service';
 export class ListarFilmesComponent {
 
   @Input() listaFilme: any[] = [];
+
   filme: any = {};
 
   genres: any[] = [];
 
-  constructor(private router: Router, private filmeService: FilmeService, private activatedRoute: ActivatedRoute) { 
+  constructor(private router: Router, private filmeService: FilmeService, private activatedRoute: ActivatedRoute) {
+    // console.log(this.novo, "id do filme, tela da lista de filme");
+    // this.filmeService.getMovie('450465')
+    // .subscribe(filme => {
+    //   this.genres = filme.genres;
+    // })
 
   }
 
   clickFilme(item: any) {
-    let idFilme;
-    idFilme = item.id;
+    const idFilme = item.id;
     this.router.navigate(['/filme', idFilme]);
   }
 
