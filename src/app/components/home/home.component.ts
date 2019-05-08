@@ -32,22 +32,18 @@ export class HomeComponent {
       });
   }
 
-  // pagina(input: string) {
-  //   console.log("Campo digitado");
-  //   console.log(input);
+  onMudouPagina(event) {
+    console.log(event.novoValor);
 
-  //   this.loading = true;
-  //   this.filmeService.getQueryforPage(input).subscribe((data: any) => {
-  //     console.log("data Lista de Filmes - dos novos filmes home");
-  //     console.log(data);
-  //     this.novosFilmes = data;
-  //     this.loading = false;
-  //   });
+    this.loading = true;
 
-  //   this.filmeService.getPage(input).subscribe((data: any) => {
-  //     console.log("data Lista de Filmes - na determinada pagina home");
-  //     console.log(data);
-  //   });
-  // }
+
+    this.filmeService.getPage(event.novoValor).subscribe((data: any) => {
+      console.log("data Lista de Filmes - na determinada pagina home");
+      console.log(data);
+      this.novosFilmes = data;
+      this.loading = false;
+    });
+  }
 
 }

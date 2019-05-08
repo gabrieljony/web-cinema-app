@@ -12,6 +12,7 @@ import { HoraMinutosPipe } from './pipes/hora-minutos.pipe';
 import { HeaderComponent } from './components/header/header.component';
 import { BtnGeneroComponent } from './components/btn-genero/btn-genero.component';
 import { CircleVotoComponent } from './components/circle-voto/circle-voto.component';
+import { PaginacaoComponent } from './components/paginacao/paginacao.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CircleVotoComponent } from './components/circle-voto/circle-voto.compon
     HoraMinutosPipe,
     HeaderComponent,
     BtnGeneroComponent,
-    CircleVotoComponent
+    CircleVotoComponent,
+    PaginacaoComponent
   ],
   imports: [
     BrowserModule,
