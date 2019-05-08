@@ -3,9 +3,6 @@
     <div class="img">
       <img class="img-movie" [src]="filme | imagemFilme">
     </div>
-    <div>
-      
-    </div>
     <div class="box">
       <app-circle-voto class="voto" [voto]="filme.vote_average / 10 | percent"></app-circle-voto>
       <h2 class="title azul">{{ filme.title }}</h2>

@@ -1,33 +1,37 @@
 #area-principal {
-	width: 720px;
+	width: 1080px;
   margin: 55px auto 10px auto;
-
 }
 
 #movie {
   background-color: #ebebeb;
-	padding: 10px;
+  padding: 20px 0 20px 20px;
 	margin-bottom: 10px;
 }
 
-.img {
-    width: 30%;
+/* #title {
+  padding: 2em;
+  background-color: #e6e6e6;
+} */
+
+.azul-marinho{
+  font-size: 25px;
 }
 
 .img-movie {
-    float: left;
-    margin:0 10px 5px 0;
-    width: 240px;
-    height: 360px;
+  float: right;
+  margin-top: 35px;
+  width: 30%;
 }
 
-.percent {
-    display: block;
-    margin-top: 10px;
+.subtitle {
+  margin-top: 35px;
+  width: 68%;
 }
-
-#title {
-    background-color: #e6e6e6;
+p {
+  margin-top: 1em;
+  text-align: justify;
+  width: 68%;
 }
 
 .data-movie {
@@ -39,27 +43,15 @@
 }
 
 table {
-  width: 100%;
+  width: 68%;
 }
 
 th, td {
   text-align: center;
 }
 
-.box-voto{
-  background-color: #116193;
-  text-align: center;
-  width: 110px;
-  line-height:110px;
-  border-radius: 73px;
-  /* float:left; */
-  border: 3px solid #116193;
-}
-
-.voto {
-  font-size: 150%;
-  border: 5px solid #00e8e4;
-  padding: 32px 25px;
-  margin: 0px;
-  border-radius: 70px;
+.genero {
+  margin-top: 1em;
+  display: flex;
+  flex-direction: column;
 }
