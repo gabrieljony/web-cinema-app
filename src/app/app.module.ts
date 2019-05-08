@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { ListarFilmesComponent } from './components/listar-filmes/listar-filmes.component';
 import { HoraMinutosPipe } from './pipes/hora-minutos.pipe';
 import { HeaderComponent } from './components/header/header.component';
-import { SearchComponent } from './components/search/search.component';
 import { BtnGeneroComponent } from './components/btn-genero/btn-genero.component';
 import { CircleVotoComponent } from './components/circle-voto/circle-voto.component';
 
@@ -23,7 +22,6 @@ import { CircleVotoComponent } from './components/circle-voto/circle-voto.compon
     ListarFilmesComponent,
     HoraMinutosPipe,
     HeaderComponent,
-    SearchComponent,
     BtnGeneroComponent,
     CircleVotoComponent
   ],

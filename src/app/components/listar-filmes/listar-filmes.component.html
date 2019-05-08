@@ -1,5 +1,4 @@
 <section id="area-principal">
-  <app-search></app-search>
   <article id="movie" (click)="clickFilme(filme)" *ngFor="let filme of listaFilme">
     <div class="img">
       <img class="img-movie" [src]="filme | imagemFilme">

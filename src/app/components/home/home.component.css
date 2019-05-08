@@ -1,0 +1,11 @@
+.box-search {
+    width: 97.5%;
+    background-color:#ebebeb;
+    border: none;
+    border-radius: 25px;
+    padding: 0.5%;
+    padding-left: 2%;
+    color: rgb(25, 18, 18);
+    height: 30px;
+    font-size: 20px;
+}
