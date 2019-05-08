@@ -55,10 +55,27 @@ export class FilmeService {
     );
   }
 
-  getPage(id: string) {
+  getPage2(id: string) {
     return this.getQueryforPage(`page=${id}`).pipe(
       map((data: any) => data)
     );
+  }
+
+  //PAGINACAO
+  //https://api.themoviedb.org/3/discover/movie?api_key=67f2745bfbab836b3214ba02776d32ba&language=pt-br&page=2
+
+
+  getQueryNova(page: string) {
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${
+      this.apikey
+      }&language=pt-BR&callback=JSONP_CALLBACK&${page}`;
+
+    return this.http.jsonp(url, '');
+  }
+
+  getPage(id: string) {
+    return this.getQueryNova(`page=${id}`)
+    .pipe(map((data: any) => data));
   }
 
 }
