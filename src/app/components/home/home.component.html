@@ -4,6 +4,6 @@
         (keyup)="buscar(input.value)"
         placeholder="Busque um filme por nome, ano ou gênero...">
 
-<app-paginacao (mudouPagina)="onMudouPagina($event)"></app-paginacao>
+<app-paginacao class="paginacao" (mudouPagina)="onMudouPagina($event)"></app-paginacao>
 
 <app-listar-filmes *ngIf="!loading" [listaFilme]="novosFilmes"></app-listar-filmes>

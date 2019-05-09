@@ -1,4 +1,9 @@
-.circle {
-  width: 10%;
-  height: 10%;
+section{
+  display:table;
+}
+
+article {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
 }

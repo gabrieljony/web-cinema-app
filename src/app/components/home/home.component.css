@@ -9,3 +9,11 @@
     height: 30px;
     font-size: 20px;
 }
+
+.paginacao {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
