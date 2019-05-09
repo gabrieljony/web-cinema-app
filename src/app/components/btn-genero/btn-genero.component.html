@@ -1,3 +1,5 @@
-<ul *ngFor="let genero of genero" class="col-1-4">
-  <li class="btn btn-small azul-marinho">{{ genero }}</li>
-</ul>
+<div *ngFor="let listagenero of lista">
+  <ul *ngFor="let genero of genero"class="">
+    <li class="btn btn-small azul-marinho col-1-4" *ngIf="listagenero.id == genero">{{ listagenero.name }}</li>
+  </ul>
+</div>

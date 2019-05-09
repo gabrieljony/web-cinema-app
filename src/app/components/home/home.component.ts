@@ -20,7 +20,7 @@ export class HomeComponent {
       .subscribe((data: any) => {
         this.novosFilmes = data;
         this.loading = false;
-        console.log(this.novosFilmes, "lista de filme2");
+        console.log(this.novosFilmes, "lista de FILME");
       });
 
   }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { FilmeService } from 'src/app/services/filme.service';
 
@@ -7,7 +7,7 @@ import { FilmeService } from 'src/app/services/filme.service';
   templateUrl: './listar-filmes.component.html',
   styleUrls: ['./listar-filmes.component.css']
 })
-export class ListarFilmesComponent implements OnInit {
+export class ListarFilmesComponent {
 
   @Input() listaFilme: any[] = [];
 
@@ -15,19 +15,16 @@ export class ListarFilmesComponent implements OnInit {
   filme: any = {};
   id: number;
   genres: any[] = [];
+  listgeneros: any[] = [];
 
 
   constructor(private router: Router, private filmeService: FilmeService) {
-    console.log(this.listaFilme, "lista de filme");
-      this.filmeService.getMovieId('299534')
-        .subscribe(filme => {
-          this.genres = filme.genres;
-        })
 
-  }
+    this.filmeService.getGenre()
+        .subscribe(genres => {
+          this.listgeneros = genres.genres;
+    });
 
-  ngOnInit(): void {
-    //throw new Error("Method not implemented.");
   }
 
   clickFilme(item: any) {

@@ -13,8 +13,13 @@ export class BtnGeneroComponent {
 
   @Input() id;
 
-  @Input() genero;
+  @Input() genero: any[] = [];
+  @Input() lista: any[] = [];
 
-  constructor(private filmeService: FilmeService) { }
+  listgeneros: any[] = [];
+
+  constructor(private filmeService: FilmeService) {
+
+   }
 
 }

@@ -51,6 +51,11 @@ export class FilmeService {
     .pipe(map((data: any) => data));
   }
 
+  getGenre() {
+    return this.getQueryforMovies('/genre/movie/list')
+    .pipe(map((data: any) => data));
+  }
+
   getDiscoverMovie() {
     return this.getQuery('/discover/movie?').pipe(
       map((data: any) => data.results)
