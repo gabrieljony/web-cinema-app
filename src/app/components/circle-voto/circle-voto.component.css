@@ -17,3 +17,10 @@
   font-size: 25px;
 }
 
+[class*='col-'] {
+  float: left;
+}
+[class*='col-']:last-of-type {
+}
+
+

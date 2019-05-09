@@ -1,9 +1,30 @@
-section{
-  display:table;
+.alinhamento {
+  margin: 2% 1%;
 }
 
-article {
-  text-align: center;
-  vertical-align: middle;
-  display: table-cell;
+.btn {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  border:none !important;
+  color: #00e8e4;
+  font-size: 16px;
+  background-color: #116193;
+  padding: 32px 13px 32px 13px;
+  text-decoration: none;
+  width: 84px;
+  height: 81px;
 }
+
+.btn:hover {
+  background-color: #00e8e4;
+  color: #116193;
+  text-decoration: none;
+  border:none !important;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+} 

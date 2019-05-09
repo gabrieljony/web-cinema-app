@@ -1,7 +1,7 @@
-<section class="paginacao">
-  <article>
-    <button (click)="voltar()" >Voltar</button>
-    <app-circle-voto [voto]="valor"></app-circle-voto>
-    <button (click)="avancar()">Avançar</button>
-  </article>
-</section>
+<button class="alinhamento btn" (click)="voltar()">Voltar</button>
+<app-circle-voto class="alinhamento" [voto]="valor"></app-circle-voto>
+<app-circle-voto class="alinhamento" [voto]="valor + 1"></app-circle-voto>
+<app-circle-voto class="alinhamento" [voto]="valor + 2"></app-circle-voto>
+<app-circle-voto class="alinhamento" [voto]="valor + 3"></app-circle-voto>
+<app-circle-voto class="alinhamento" [voto]="valor + 4"></app-circle-voto>
+<button class="alinhamento btn" (click)="avancar()">Avançar</button>

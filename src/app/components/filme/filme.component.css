@@ -1,12 +1,13 @@
 #area-principal {
-	width: 1080px;
+  width: 1080px;
   margin: 55px auto 10px auto;
 }
 
 #movie {
   background-color: #ebebeb;
   padding: 20px 0 20px 20px;
-	margin-bottom: 10px;
+  margin-bottom: 10px;
+  height: 560px;
 }
 
 /* #title {
@@ -28,6 +29,7 @@
   margin-top: 35px;
   width: 68%;
 }
+
 p {
   margin-top: 1em;
   text-align: justify;
@@ -54,4 +56,9 @@ th, td {
   margin-top: 1em;
   display: flex;
   flex-direction: column;
+}
+
+.element-voto{
+  float: right;
+  margin-right: 3%;
 }
