@@ -26,10 +26,8 @@
         <td>{{ (filme.revenue - filme.budget) | currency }}</td>
       </tr>
     </table>
-    <ul>
-      <li class="genero">
-        <app-btn-genero [id]="filme.id" [genero]="filme.genres"></app-btn-genero>
-      </li>
+    <ul *ngFor="let genero of genres">
+      <li class="btn btn-small azul-marinho col-1-4">{{ genero.name }}</li>
     </ul>
     <app-circle-voto [voto]="filme.vote_average / 10 | percent" class="element-voto"></app-circle-voto>
   </article>

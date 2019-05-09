@@ -12,7 +12,7 @@ export class FilmeComponent {
   filme: any = {};
 
   language: any[] = [];
-  genres: string[] = [];
+  genres: any[] = [];
   video: string[] = [];
 
   constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
@@ -20,8 +20,11 @@ export class FilmeComponent {
     this.router.params.subscribe(params => {
 
       this.filmeService.getMovieId(params['id'])
-        .subscribe(filme => {
-          this.filme = filme;
+        .subscribe(filmes => {
+          this.filme = filmes;
+          this.genres = filmes.genres;
+          console.log(this.filme, "filme");
+          console.log(this.genres, "genres");
       });
 
       this.filmeService.getVideo(params['id'])
