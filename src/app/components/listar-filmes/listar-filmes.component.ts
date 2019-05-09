@@ -22,19 +22,25 @@ export class ListarFilmesComponent {
      this.filmeService.getDiscoverMovie2()
       .subscribe((filme: any) => {
         this.filmes = filme;
-        this.id = filme.vote_average;
-        console.log(this.filmes, "filmes");
+        this.filme = filme;
+        this.id = filme.id;
+        console.log(this.filmes, "aqui filmes");
+        console.log(this.filme, "aqui filme {}");
         console.log(this.id, "id");
         
       });
 
-      this.filmeService.getMovie('299534')
-        .subscribe(filme => {
-          this.genres = filme.genres;
-          this.id = filme.id;
-          console.log(this.id, "id da busca");
-          console.log(this.genres, "genero");
-        })
+      // this.filmeService.getMovie('299534')
+      //   .subscribe(filme => {
+      //     this.filmes = filme;
+      //     this.filme = filme;
+      //     this.genres = filme.genres;
+      //     this.id = filme.id;
+      //     console.log(this.filmes, "filmes 2");
+      //     console.log(this.filme, "aqui filme {}");
+      //     console.log(this.id, "id da busca");
+      //     console.log(this.genres, "genero");
+      //   })
 
   }
 

@@ -44,7 +44,7 @@ export class FilmeService {
   }
 
   getDiscoverMovie2() {
-    return this.getQuery('/discover/movie?').pipe(
+    return this.getQueryforMovies('/movie/list').pipe(
       map((data: any) => data.results)
     );
   }
