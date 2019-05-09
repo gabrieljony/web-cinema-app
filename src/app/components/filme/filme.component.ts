@@ -11,7 +11,7 @@ export class FilmeComponent {
 
   filme: any = {};
 
-  language: string[] = [];
+  language: any[] = [];
   genres: string[] = [];
   video: string[] = [];
 
