@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BtnGeneroComponent } from './components/btn-genero/btn-genero.component';
 import { CircleVotoComponent } from './components/circle-voto/circle-voto.component';
 import { PaginacaoComponent } from './components/paginacao/paginacao.component';
+import { VideoPipe } from './pipes/video.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PaginacaoComponent } from './components/paginacao/paginacao.component';
     HeaderComponent,
     BtnGeneroComponent,
     CircleVotoComponent,
-    PaginacaoComponent
+    PaginacaoComponent,
+    VideoPipe
   ],
   imports: [
     BrowserModule,

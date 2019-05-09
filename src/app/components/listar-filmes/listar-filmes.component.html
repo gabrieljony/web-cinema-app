@@ -8,7 +8,7 @@
       <h2 class="title azul">{{ filme.title }}</h2>
       <span class="data-movie">{{ filme.release_date | date: 'dd/MM/yyyy' }}</span>
       <p class="description">{{ filme.overview }}</p>
-      <app-btn-genero></app-btn-genero>
+      <app-btn-genero [id]="filme.id" [genero]="genres"></app-btn-genero>
     </div>
   </article>
 </section>

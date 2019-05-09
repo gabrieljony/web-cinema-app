@@ -18,6 +18,7 @@ export class HomeComponent {
     this.filmeService.getDiscoverMovie()
       .subscribe((data: any) => {
         this.novosFilmes = data;
+        console.log(this.novosFilmes, "novo filme");
         this.loading = false;
       });
   }

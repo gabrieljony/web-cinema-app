@@ -14,13 +14,27 @@ export class ListarFilmesComponent {
   filme: any = {};
 
   genres: any[] = [];
+  filmes: any[] = [];
+
+  id: number;
 
   constructor(private router: Router, private filmeService: FilmeService, private activatedRoute: ActivatedRoute) {
-    // console.log(this.novo, "id do filme, tela da lista de filme");
-    // this.filmeService.getMovie('450465')
-    // .subscribe(filme => {
-    //   this.genres = filme.genres;
-    // })
+     this.filmeService.getDiscoverMovie2()
+      .subscribe((filme: any) => {
+        this.filmes = filme;
+        this.id = filme.vote_average;
+        console.log(this.filmes, "filmes");
+        console.log(this.id, "id");
+        
+      });
+
+      this.filmeService.getMovie('299534')
+        .subscribe(filme => {
+          this.genres = filme.genres;
+          this.id = filme.id;
+          console.log(this.id, "id da busca");
+          console.log(this.genres, "genero");
+        })
 
   }
 

@@ -1,34 +1,38 @@
 <div id="area-principal">
   <div id="movie">
-      <h1 class="azul-marinho">{{ filme.title }}</h1>
-      <span class="data">{{ filme.release_date | date:'dd/MM/yyyy' }}</span>
-      <img class="img-movie" [src]="filme | imagemFilme" [alt]="filme.original_title">
-      <h2 class="subtitle azul-marinho">Sinopse</h2>
-      <p>{{ filme.overview }}</p>
-      <h2 class="subtitle azul-marinho">Informações</h2>
-        <table>
-          <tr class="subtitulo azul-marinho">
-            <th>Situação</th>
-            <th>Idioma</th>
-            <th>Duração</th>
-            <th>Orçamento</th>
-            <th>Receita</th>
-            <th>Lucro</th>
-          </tr>
-          <tr>
-            <td>{{ filme.status }}</td>
-            <td>{{ filme.original_language }}</td>
-            <td>{{ filme.runtime | horaMinutos }}</td>
-            <td>{{ filme.budget | currency }}</td>
-            <td>{{ filme.revenue | currency }}</td>
-            <td>{{ (filme.revenue - filme.budget) | currency }}</td>
-          </tr>
-        </table>
-        <ul>
-          <li class="genero">
-            <app-btn-genero [id]="filme.id"></app-btn-genero>
-          </li>
-        </ul>
-        <app-circle-voto [voto]="filme.vote_average / 10 | percent"></app-circle-voto>
+    <h1 class="azul-marinho">{{ filme.title }}</h1>
+    <span class="data">{{ filme.release_date | date:'dd/MM/yyyy' }}</span>
+    <img class="img-movie" [src]="filme | imagemFilme" [alt]="filme.original_title">
+    <h2 class="subtitle azul-marinho">Sinopse</h2>
+    <p>{{ filme.overview }}</p>
+    <h2 class="subtitle azul-marinho">Informações</h2>
+    <table>
+      <tr class="subtitulo azul-marinho">
+        <th>Situação</th>
+        <th>Idioma</th>
+        <th>Duração</th>
+        <th>Orçamento</th>
+        <th>Receita</th>
+        <th>Lucro</th>
+      </tr>
+      <tr>
+        <td>{{ filme.status }}</td>
+        <td>{{ filme.original_language }}</td>
+        <td>{{ filme.runtime | horaMinutos }}</td>
+        <td>{{ filme.budget | currency }}</td>
+        <td>{{ filme.revenue | currency }}</td>
+        <td>{{ (filme.revenue - filme.budget) | currency }}</td>
+      </tr>
+    </table>
+    <ul>
+      <li class="genero">
+        <app-btn-genero [id]="filme.id" [genero]="filme.genres"></app-btn-genero>
+      </li>
+    </ul>
+    <app-circle-voto [voto]="filme.vote_average / 10 | percent"></app-circle-voto>
   </div>
+  <object width="100%" height="600" *ngFor="let video of video">
+      <param name="video.name" value="http://www.youtube.com/v/video.key" />
+      <embed src="http://www.youtube.com/v/video.key" type="application/x-shockwave-flash" width="100%" height="600"/>
+    </object>
 </div>
