@@ -41,12 +41,6 @@ export class FilmeService {
 
   // GET
 
-  getDiscoverMovieList() {
-    return this.getQueryforMovies('/movie/list').pipe(
-      map((data: any) => data.results)
-    );
-  }
-
   getMovieId(id: string) {
     return this.getQueryforMovies(`/movie/${id}`)
     .pipe(map((data: any) => data));

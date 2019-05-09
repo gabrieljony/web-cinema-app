@@ -1,5 +1,5 @@
-import { Component, Input, EventEmitter, Output } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FilmeService } from 'src/app/services/filme.service';
 
 @Component({
@@ -7,25 +7,34 @@ import { FilmeService } from 'src/app/services/filme.service';
   templateUrl: './listar-filmes.component.html',
   styleUrls: ['./listar-filmes.component.css']
 })
-export class ListarFilmesComponent {
+export class ListarFilmesComponent implements OnInit {
 
   @Input() listaFilme: any[] = [];
 
-  filme: any = {};
-
-  genres: any[] = [];
   filmes: any[] = [];
-
+  filme: any = {};
   id: number;
+  genres: any[] = [];
 
-  constructor(private router: Router, private filmeService: FilmeService, private activatedRoute: ActivatedRoute) {
-     this.filmeService.getDiscoverMovieList()
-      .subscribe((filme: any) => {
-        this.filmes = filme;
-        this.filme = filme;
-        this.id = filme.id;
-      });
 
+  constructor(private router: Router, private filmeService: FilmeService) {
+
+      this.filmeService.getMovieId('299534')
+        .subscribe(filme => {
+          this.filmes = filme;
+          this.filme = filme;
+          this.genres = filme.genres;
+          this.id = filme.id;
+          // console.log(this.filmes, "filmes 2");
+          // console.log(this.filme, "aqui filme {}");
+          // console.log(this.id, "id da busca");
+          console.log(this.genres, "genero");
+        })
+
+  }
+
+  ngOnInit(): void {
+    //throw new Error("Method not implemented.");
   }
 
   clickFilme(item: any) {
