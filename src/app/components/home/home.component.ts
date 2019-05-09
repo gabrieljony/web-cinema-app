@@ -13,13 +13,16 @@ export class HomeComponent {
   valorInput:string;
 
   constructor(private filmeService: FilmeService) {
+
     this.loading = true;
 
     this.filmeService.getDiscoverMovie()
       .subscribe((data: any) => {
         this.novosFilmes = data;
         this.loading = false;
+        console.log(this.novosFilmes, "lista de filme2");
       });
+
   }
 
   buscar(input: string) {

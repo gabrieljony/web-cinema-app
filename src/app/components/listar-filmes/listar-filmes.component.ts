@@ -18,17 +18,10 @@ export class ListarFilmesComponent implements OnInit {
 
 
   constructor(private router: Router, private filmeService: FilmeService) {
-
+    console.log(this.listaFilme, "lista de filme");
       this.filmeService.getMovieId('299534')
         .subscribe(filme => {
-          this.filmes = filme;
-          this.filme = filme;
           this.genres = filme.genres;
-          this.id = filme.id;
-          // console.log(this.filmes, "filmes 2");
-          // console.log(this.filme, "aqui filme {}");
-          // console.log(this.id, "id da busca");
-          console.log(this.genres, "genero");
         })
 
   }
