@@ -17,7 +17,9 @@
       </tr>
       <tr>
         <td>{{ filme.status }}</td>
-        <td>{{ filme.original_language }}</td>
+        <div *ngFor="let language of language">
+          <td *ngIf="language.iso_639_1 == filme.original_language">{{ language.english_name }}</td>
+        </div>
         <td>{{ filme.runtime | horaMinutos }}</td>
         <td>{{ filme.budget | currency }}</td>
         <td>{{ filme.revenue | currency }}</td>

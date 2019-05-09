@@ -99,14 +99,13 @@ export class FilmeService {
     return this.getQueryNova2(`${id}`)
     .pipe(map((data: any) => data));
   }
-  
-  //Youtube
-  //https://www.youtube.com/watch?v=95ghQs5AmNk
-  
-  getQueryYoutube(key: string) {
-    const url = `https://www.youtube.com/watch?v=${key}`;
 
-    return this.http.jsonp(url, '');
-  }  
+  //Linguagem
+  //https://api.themoviedb.org/3/configuration/languages?api_key=67f2745bfbab836b3214ba02776d32ba
+
+  getLanguages() {
+    return this.getQueryforMovies('/configuration/languages')
+    .pipe(map((data: any) => data));
+  }
 
 }

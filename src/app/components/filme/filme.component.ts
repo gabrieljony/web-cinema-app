@@ -11,12 +11,9 @@ export class FilmeComponent {
 
   filme: any = {};
 
-  video: any[] = [];
-  youtube: any = {};
-
-  genres: any[] = [];
-
-  url: string = 'http://www.youtube.com/v/';
+  language: string[] = [];
+  genres: string[] = [];
+  video: string[] = [];
 
   constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
 
@@ -25,21 +22,19 @@ export class FilmeComponent {
       this.filmeService.getMovie(params['id'])
         .subscribe(filme => {
           this.filme = filme;
-          console.log(this.filme, "filme do filme");
-          console.log(this.genres, "genero do filme");
-        })
+      });
 
-        this.filmeService.getVideo(params['id'])
+      this.filmeService.getVideo(params['id'])
         .subscribe(video => {
           this.video = video.results;
-          console.log(this.video, "video do filme");
-        })
+      });
 
-        // this.filmeService.getQueryYoutube('95ghQs5AmNk')
-        // .subscribe(youtube => {
-        //   this.youtube = youtube;
-        //   console.log(this.youtube, "youtube do filme");
-        // })
-    })
+    });
+
+    this.filmeService.getLanguages()
+        .subscribe(language => {
+          this.language = language;
+    });
   }
+
 }
