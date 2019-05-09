@@ -31,8 +31,5 @@
     </ul>
     <app-circle-voto [voto]="filme.vote_average / 10 | percent" class="element-voto"></app-circle-voto>
   </article>
-  <object width="100%" height="600" *ngFor="let video of video">
-    <param name="video.name" value="http://www.youtube.com/v/video.key" />
-    <embed src="http://www.youtube.com/v/video.key" type="application/x-shockwave-flash" width="100%" height="600" />
-  </object>
+  <app-video-youtube [videos]="video"></app-video-youtube>
 </section>

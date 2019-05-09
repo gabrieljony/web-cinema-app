@@ -14,6 +14,7 @@ import { BtnGeneroComponent } from './components/btn-genero/btn-genero.component
 import { CircleVotoComponent } from './components/circle-voto/circle-voto.component';
 import { PaginacaoComponent } from './components/paginacao/paginacao.component';
 import { VideoPipe } from './pipes/video.pipe';
+import { VideoYoutubeComponent } from './components/video-youtube/video-youtube.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { VideoPipe } from './pipes/video.pipe';
     BtnGeneroComponent,
     CircleVotoComponent,
     PaginacaoComponent,
-    VideoPipe
+    VideoPipe,
+    VideoYoutubeComponent
   ],
   imports: [
     BrowserModule,
