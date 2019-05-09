@@ -1,6 +1,6 @@
 #area-principal {
   width: 1080px;
-  height: 360px;
+  height: 350px;
   margin: 55px auto 10px auto;
 }
 
@@ -15,10 +15,8 @@
     float: left;
 }
 
-.img-movie {
+img.img-movie {
     margin-right: 30px;
-    width: 240px;
-    height: 360px;
 }
 
 .box {

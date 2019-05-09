@@ -9,14 +9,14 @@ import { FilmeService } from 'src/app/services/filme.service';
 })
 export class BtnGeneroComponent {
 
-  @Input() itens: any[] = [];
-
+  
   @Input() id;
+  
+  @Input() itens: Object[] = [];
+  @Input() genero: Object[] = [];
+  @Input() lista: Object[] = [];
 
-  @Input() genero: any[] = [];
-  @Input() lista: any[] = [];
-
-  listgeneros: any[] = [];
+  listgeneros: Object[] = [];
 
   constructor(private filmeService: FilmeService) {
 

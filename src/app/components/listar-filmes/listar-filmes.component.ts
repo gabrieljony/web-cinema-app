@@ -9,13 +9,10 @@ import { FilmeService } from 'src/app/services/filme.service';
 })
 export class ListarFilmesComponent {
 
-  @Input() listaFilme: any[] = [];
+  @Input() listaFilme: Object[] = [];
 
-  filmes: any[] = [];
-  filme: any = {};
   id: number;
-  genres: any[] = [];
-  listgeneros: any[] = [];
+  listgeneros: Object[] = [];
 
 
   constructor(private router: Router, private filmeService: FilmeService) {

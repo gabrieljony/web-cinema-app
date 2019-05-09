@@ -8,9 +8,9 @@ import { FilmeService } from 'src/app/services/filme.service';
 })
 export class HomeComponent {
 
-  novosFilmes: any[] = [];
+  novosFilmes: Object[] = [];
   loading: boolean;
-  valorInput:string;
+  valorInput: string;
 
   constructor(private filmeService: FilmeService) {
 
@@ -20,7 +20,6 @@ export class HomeComponent {
       .subscribe((data: any) => {
         this.novosFilmes = data;
         this.loading = false;
-        console.log(this.novosFilmes, "lista de FILME");
       });
 
   }
@@ -36,15 +35,9 @@ export class HomeComponent {
   }
 
   onMudouPagina(event) {
-    console.log(event.novoValor);
-
     this.loading = true;
-
-
+    
     this.filmeService.getPage(event.novoValor).subscribe((data: any) => {
-      console.log("data Lista de Filmes - na determinada pagina home");
-      console.log(data);
-      console.log(data.length);
       this.novosFilmes = data;
       this.loading = false;
     });

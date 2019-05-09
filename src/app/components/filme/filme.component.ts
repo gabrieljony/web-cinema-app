@@ -9,10 +9,9 @@ import { FilmeService } from 'src/app/services/filme.service';
 })
 export class FilmeComponent {
 
-  filme: any = {};
-
-  language: any[] = [];
-  genres: any[] = [];
+  filme: Object[] = [];
+  language: Object[] = [];
+  genres: Object[] = [];
   video: string[] = [];
 
   constructor(private router: ActivatedRoute, private filmeService: FilmeService) {
@@ -23,8 +22,6 @@ export class FilmeComponent {
         .subscribe(filmes => {
           this.filme = filmes;
           this.genres = filmes.genres;
-          console.log(this.filme, "filme");
-          console.log(this.genres, "genres");
       });
 
       this.filmeService.getVideo(params['id'])

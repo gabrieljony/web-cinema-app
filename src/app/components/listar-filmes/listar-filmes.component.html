@@ -1,7 +1,7 @@
 <section id="area-principal">
   <article id="movie" (click)="clickFilme(filme)" *ngFor="let filme of listaFilme">
     <div class="img">
-      <img class="img-movie" [src]="filme | imagemFilme">
+      <img class="img-movie" [src]="filme | imagemFilme" alt="Mountains" width="250" height="350">
     </div>
     <div class="box">
       <app-circle-voto class="voto" [voto]="filme.vote_average / 10 | percent"></app-circle-voto>
