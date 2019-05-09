@@ -19,28 +19,12 @@ export class ListarFilmesComponent {
   id: number;
 
   constructor(private router: Router, private filmeService: FilmeService, private activatedRoute: ActivatedRoute) {
-     this.filmeService.getDiscoverMovie2()
+     this.filmeService.getDiscoverMovieList()
       .subscribe((filme: any) => {
         this.filmes = filme;
         this.filme = filme;
         this.id = filme.id;
-        console.log(this.filmes, "aqui filmes");
-        console.log(this.filme, "aqui filme {}");
-        console.log(this.id, "id");
-        
       });
-
-      // this.filmeService.getMovie('299534')
-      //   .subscribe(filme => {
-      //     this.filmes = filme;
-      //     this.filme = filme;
-      //     this.genres = filme.genres;
-      //     this.id = filme.id;
-      //     console.log(this.filmes, "filmes 2");
-      //     console.log(this.filme, "aqui filme {}");
-      //     console.log(this.id, "id da busca");
-      //     console.log(this.genres, "genero");
-      //   })
 
   }
 

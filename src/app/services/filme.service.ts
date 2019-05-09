@@ -13,28 +13,48 @@ export class FilmeService {
 
   constructor(private http: HttpClient) { }
 
+  // QUERY
+
   getQuery(query: string) {
-    const url = `https://api.themoviedb.org/3${query}&api_key=${
-      this.apikey
-      }&language=pt-BR&callback=JSONP_CALLBACK`;
+    const url = `${this.urlAPI}${query}&api_key=${this.apikey}&language=pt-BR&callback=JSONP_CALLBACK`;
 
     return this.http.jsonp(url, '');
   }
 
   getQueryforMovies(query: string) {
-    const url = `https://api.themoviedb.org/3${query}?api_key=${
-      this.apikey
-      }&language=pt-BR&callback=JSONP_CALLBACK`;
+    const url = `${this.urlAPI}${query}?api_key=${this.apikey}&language=pt-BR&callback=JSONP_CALLBACK`;
 
     return this.http.jsonp(url, '');
   }
 
-  getQueryforPage(query: string) {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${
-      this.apikey
-      }&language=pt-BR&callback=JSONP_CALLBACK&${query}`;
+  getQueryVideo(id: string) {
+    const url = `${this.urlAPI}/movie/${id}/videos?api_key=${this.apikey}&language=pt-BR&callback=JSONP_CALLBACK`;
 
     return this.http.jsonp(url, '');
+  }
+
+  getQueryPage(page: string) {
+    const url = `${this.urlAPI}/discover/movie?api_key=${this.apikey}&language=pt-BR&callback=JSONP_CALLBACK&${page}`;
+
+    return this.http.jsonp(url, '');
+  }
+
+  // GET
+
+  getDiscoverMovieList() {
+    return this.getQueryforMovies('/movie/list').pipe(
+      map((data: any) => data.results)
+    );
+  }
+
+  getMovieId(id: string) {
+    return this.getQueryforMovies(`/movie/${id}`)
+    .pipe(map((data: any) => data));
+  }
+
+  getLanguages() {
+    return this.getQueryforMovies('/configuration/languages')
+    .pipe(map((data: any) => data));
   }
 
   getDiscoverMovie() {
@@ -43,68 +63,18 @@ export class FilmeService {
     );
   }
 
-  getDiscoverMovie2() {
-    return this.getQueryforMovies('/movie/list').pipe(
-      map((data: any) => data.results)
-    );
-  }
-
   getSearchMovie(input: string) {
-    return this.getQuery(
-      `/search/movie?query=${input}`
-    ).pipe(map((data: any) => data.results));
-  }
-
-  getMovie(id: string) {
-    return this.getQueryforMovies(`/movie/${id}`).pipe(
-      map((data: any) => data)
-    );
-  }
-
-  getPage2(id: string) {
-    return this.getQueryforPage(`page=${id}`).pipe(
-      map((data: any) => data)
-    );
-  }
-
-  //PAGINACAO
-  //https://api.themoviedb.org/3/discover/movie?api_key=67f2745bfbab836b3214ba02776d32ba&language=pt-br&page=2
-
-
-  getQueryNova(page: string) {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${
-      this.apikey
-      }&language=pt-BR&callback=JSONP_CALLBACK&${page}`;
-
-    return this.http.jsonp(url, '');
-  }
-
-
-  getPage(id: string) {
-    return this.getQueryNova(`page=${id}`)
+    return this.getQuery(`/search/movie?query=${input}`)
     .pipe(map((data: any) => data.results));
   }
 
-  //VIDEO
-  //https://api.themoviedb.org/3/movie/{movie_id}/videos?api_key=67f2745bfbab836b3214ba02776d32ba&language=en-US
-  getQueryNova2(id: string) {
-    const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${
-      this.apikey
-      }&language=pt-BR&callback=JSONP_CALLBACK`;
-
-    return this.http.jsonp(url, '');
+  getPage(id: string) {
+    return this.getQueryPage(`page=${id}`)
+    .pipe(map((data: any) => data.results));
   }
 
   getVideo(id: string) {
-    return this.getQueryNova2(`${id}`)
-    .pipe(map((data: any) => data));
-  }
-
-  //Linguagem
-  //https://api.themoviedb.org/3/configuration/languages?api_key=67f2745bfbab836b3214ba02776d32ba
-
-  getLanguages() {
-    return this.getQueryforMovies('/configuration/languages')
+    return this.getQueryVideo(`${id}`)
     .pipe(map((data: any) => data));
   }
 

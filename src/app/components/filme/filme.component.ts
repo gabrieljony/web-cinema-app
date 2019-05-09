@@ -19,7 +19,7 @@ export class FilmeComponent {
 
     this.router.params.subscribe(params => {
 
-      this.filmeService.getMovie(params['id'])
+      this.filmeService.getMovieId(params['id'])
         .subscribe(filme => {
           this.filme = filme;
       });

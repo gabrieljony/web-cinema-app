@@ -15,16 +15,6 @@ export class BtnGeneroComponent {
 
   @Input() genero;
 
-  // genres: any[] = [];
-
   constructor(private filmeService: FilmeService) { }
-
-  // metodo(){
-  //   this.filmeService.getMovie('450465')
-  //       .subscribe(filme => {
-  //         this.genres = filme.genres;
-  //       })
-
-  // }
 
 }
