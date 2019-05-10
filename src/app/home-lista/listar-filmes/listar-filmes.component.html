@@ -1,5 +1,5 @@
-<section id="area-principal">
-  <article id="movie" (click)="clickFilme(filme)" *ngFor="let filme of listaFilme">
+<section id="area-principal" *ngFor="let filme of listaFilme">
+  <article id="movie" (click)="clickFilme(filme)" >
     <div class="img">
       <img class="img-movie" [src]="filme | imagemFilme" alt="Mountains" width="250" height="350">
     </div>
