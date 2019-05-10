@@ -14,7 +14,6 @@ export class ListarFilmesComponent {
   id: number;
   listgeneros: Object[] = [];
 
-
   constructor(private router: Router, private filmeService: FilmeService) {
 
     this.filmeService.getGenre()

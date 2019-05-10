@@ -13,9 +13,6 @@ export class ImagemFilmePipe implements PipeTransform {
       return url + filme.poster_path;
     }
 
-    // if (filme.backdrop_path) {
-    //   return url + filme.backdrop_path;
-    // }
   }
 
 }
